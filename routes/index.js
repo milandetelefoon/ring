@@ -81,7 +81,10 @@ gather.say({
     voice: 'woman',
     language: 'nl-NL'
 }, 'Druk op 1 om dit bericht nog eens te beluisteren en sluit af met een hekje.');
-twiml.say('We hebben geen input ontvangen. Tot ziens.');
+twiml.say({
+    voice: 'woman',
+    language: 'nl-NL'
+}, 'We hebben geen input ontvangen. Tot ziens.');
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
   
