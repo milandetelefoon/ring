@@ -19,7 +19,7 @@ users.find({id: 'test'}).then((docs) => {
   docs.forEach(function(element) {
 client.calls
   .create({
-     url: 'https://milan-milandetelefoon623808.codeanyapp.com/outbound',
+     url: 'https://dering.herokuapp.com/outbound',
      to: element.phone_number,
      from: '+31852250154'})
   .then(call => console.log(call.sid))
