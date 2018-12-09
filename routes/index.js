@@ -162,7 +162,7 @@ clientWit.message(req.body.Body, {})
                 function(val) {
                       client.messages
                         .create({
-                          body: 'Er zijn nu ' + val + ' hulpverleners toegevoegd.',
+                          body: 'Er zijn nu ' + val + ' hulpverleners.',
                           from: 'whatsapp:+14155238886',
                           to: sender
                         })
