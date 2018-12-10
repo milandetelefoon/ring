@@ -57,8 +57,7 @@ client.messages
     const twiml = new VoiceResponse();
 
     twiml.say({
-    voice: 'woman',
-    language: 'nl-NL'
+    voice: 'Polly.Ruben',
 }, 'Jij wilt je ideeën echt realiseren. Binnen organisaties of in een eigen onderneming. Je bent ondernemend, nieuwsgierig en creatief. Je durft andere keuzes te maken. Jij hebt een brede blik op de wereld. Je wilt duurzame waarde creëren door innovatie. Dan is de opleiding Business Innovation iets voor jou.');
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
@@ -70,20 +69,17 @@ router.post('/outbound', function(req, res, next) {
     const twiml = new VoiceResponse();
 
     twiml.say({
-    voice: 'woman',
-    language: 'nl-NL'
+    voice: 'Polly.Ruben',
 }, 'Milan Passchier is gevallen bij Avans Hogeschool. De exacte locatie is verzonden via WhatsApp.');
 const gather = twiml.gather({
     action: '/shawn',
     method: 'GET'
 });
 gather.say({
-    voice: 'woman',
-    language: 'nl-NL'
+    voice: 'Polly.Ruben',
 }, 'Druk op 1 om dit bericht nog eens te beluisteren en sluit af met een hekje.');
 twiml.say({
-    voice: 'woman',
-    language: 'nl-NL'
+    voice: 'Polly.Ruben',
 }, 'We hebben geen input ontvangen. Tot ziens.');
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
@@ -94,8 +90,7 @@ router.get('/shawn', function(req, res, next) {
   
 const twiml = new VoiceResponse();
 twiml.say({
-    voice: 'woman',
-    language: 'nl-NL'
+    voice: 'Polly.Ruben',
 }, 'Milan Passchier is gevallen bij Avans Hogeschool. De exacte locatie is verzonden via WhatsApp. Tot ziens.');
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
