@@ -14,6 +14,11 @@ var PhoneNumber = require('awesome-phonenumber');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
+  res.render('index', { title: 'Valãs' });
+});
+
+router.get('/test', function(req, res, next) {
+  
 users.find({id: 'test'}).then((docs) => {
   
   docs.forEach(function(element) {
@@ -35,12 +40,9 @@ client.messages
   .done();
 });
 
-  
-  
+res.send('Verzonden');
   
 });
-  
-  res.render('index', { title: 'Express' });
 });
 
 router.post('/incoming', function(req, res, next) {
@@ -57,7 +59,8 @@ client.messages
     const twiml = new VoiceResponse();
 
     twiml.say({
-    voice: 'Polly.Lotte',
+    voice: 'woman',
+    language: 'nl-NL'
 }, 'Jij wilt je ideeën echt realiseren. Binnen organisaties of in een eigen onderneming. Je bent ondernemend, nieuwsgierig en creatief. Je durft andere keuzes te maken. Jij hebt een brede blik op de wereld. Je wilt duurzame waarde creëren door innovatie. Dan is de opleiding Business Innovation iets voor jou.');
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
@@ -69,17 +72,20 @@ router.post('/outbound', function(req, res, next) {
     const twiml = new VoiceResponse();
 
     twiml.say({
-    voice: 'Polly.Lotte',
+    voice: 'woman',
+    language: 'nl-NL'
 }, 'Milan Passchier is gevallen bij Avans Hogeschool. De exacte locatie is verzonden via WhatsApp.');
 const gather = twiml.gather({
     action: '/shawn',
     method: 'GET'
 });
 gather.say({
-    voice: 'Polly.Lotte',
+    voice: 'woman',
+    language: 'nl-NL'
 }, 'Druk op 1 om dit bericht nog eens te beluisteren en sluit af met een hekje.');
 twiml.say({
-    voice: 'Polly.Lotte',
+    voice: 'woman',
+    language: 'nl-NL'
 }, 'We hebben geen input ontvangen. Tot ziens.');
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
@@ -90,7 +96,8 @@ router.get('/shawn', function(req, res, next) {
   
 const twiml = new VoiceResponse();
 twiml.say({
-    voice: 'Polly.Lotte',
+    voice: 'woman',
+    language: 'nl-NL'
 }, 'Milan Passchier is gevallen bij Avans Hogeschool. De exacte locatie is verzonden via WhatsApp. Tot ziens.');
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());

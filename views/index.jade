@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    .row
+      .col-sm-12.col-md-4.offset-md-4
+        .content
+          img(src="WhatsApp.png" alt="Smiley face")
+          .div(class="btn-group" role="group" aria-label="Basic example")
+            button(type="button" class="btn btn-primary") Test het alarmeringssysteem
+  footer
+    span Valãs is een initiatief van Milan Passchier, Larissa Mesker, Romée Bongers en Elyse van Rossum.
+  script.
+    $("button").click(function(){
+      $.get("test", function(data){
+        console.log(data);
+      });
+    }); 
